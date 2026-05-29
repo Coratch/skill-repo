@@ -1,0 +1,4 @@
+interface:
+  display_name: "Article Learning Coach"
+  short_description: "Structured coach for learning PDFs and articles"
+  default_prompt: "Use $article-learning-coach to learn a professional article from a PDF, URL, DOI, or pasted text."
