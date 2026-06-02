@@ -20,10 +20,18 @@ Accept any of:
 - Pasted article text
 - Existing notes plus a source
 
-For local PDFs, extract text first when the environment does not already expose the content. You may use `scripts/extract_pdf_text.py`:
+For local PDFs, extract text first when the environment does not already expose the content.
+
+When running from the skill root:
 
 ```bash
 python scripts/extract_pdf_text.py input.pdf --output article.txt
+```
+
+When running from the repository root:
+
+```bash
+python article-learning-coach/scripts/extract_pdf_text.py input.pdf --output article.txt
 ```
 
 If source content is incomplete, say exactly what is missing and continue with visible evidence only.
