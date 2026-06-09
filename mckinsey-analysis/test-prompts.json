@@ -1,0 +1,17 @@
+[
+  {
+    "id": "quick-review",
+    "prompt": "帮我审查一个产品方案：我们准备给企业客户做 AI 知识库，三个月内上线，目标是提升客服效率。请用麦肯锡方式判断这个方案最大的问题和下一步动作。",
+    "expected": "应先给核心判断，用 MECE 拆解问题，指出关键假设、最大风险和 P0/P1/P2 行动；不能只罗列通用 AI 知识库建议。"
+  },
+  {
+    "id": "evidence-backed-strategy",
+    "prompt": "用麦肯锡方法分析 2026 年进入美国企业 AI Agent 市场是否值得做，并给出战略建议。",
+    "expected": "应识别这是涉及当前市场的高变化问题，要求查证或标注需查证；输出 FACT/ESTIMATE/INFERENCE/ASSUMPTION 区分、关键假设、压力测试和行动建议。"
+  },
+  {
+    "id": "executive-storyline",
+    "prompt": "我要给 CEO 做 10 页 PPT，主题是研发组织如何提高 AI 编码效率。请给我麦肯锡风格 storyline 和 dummy pages。",
+    "expected": "应进入高管交付模式，先给核心建议和论证链，再给页码、结论式页面标题、页面目的、图表结构、关键证据、So What 和数据需求。"
+  }
+]

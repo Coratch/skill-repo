@@ -18,9 +18,9 @@ It is designed to move beyond generic summarization. The workflow helps a learne
 - use a Feynman loop to test understanding
 - create active-recall questions, memory cards, and spaced-review prompts
 
-### McKinsey
+### McKinsey Analysis
 
-`mckinsey` is a structured consulting analysis skill for complex decisions, project diagnosis, strategy, product planning, organization issues, technical reviews, MECE decomposition, hypothesis-driven analysis, executive summaries, and action plans.
+`mckinsey-analysis` is a McKinsey-style consulting analysis skill for complex decisions, project diagnosis, strategy, product planning, organization issues, technical reviews, MECE decomposition, evidence-backed executive summaries, slide/storyline design, and action plans.
 
 It is designed to help turn ambiguous problems into decision-ready analysis:
 
@@ -28,6 +28,8 @@ It is designed to help turn ambiguous problems into decision-ready analysis:
 - decompose problems with MECE issue trees
 - form and test hypotheses with WWHTBT
 - apply 80/20 prioritization and So What reasoning
+- separate facts, estimates, inferences, and assumptions
+- design executive storylines and dummy pages for PPT-style deliverables
 - synthesize conclusions with pyramid structure
 - produce prioritized action plans and pressure tests
 
@@ -60,8 +62,9 @@ skill-repo/
 │   │   └── output-templates.md
 │   └── scripts/
 │       └── extract_pdf_text.py
-├── mckinsey/
-│   └── SKILL.md
+├── mckinsey-analysis/
+│   ├── SKILL.md
+│   └── test-prompts.json
 ├── architecture-review/
 │   ├── SKILL.md
 │   └── references/
@@ -90,15 +93,19 @@ Use $article-learning-coach in memory mode and generate Anki-style cards.
 ```
 
 ```text
-Use $mckinsey to analyze this product strategy.
+Use $mckinsey-analysis to analyze this product strategy.
 ```
 
 ```text
-Use $mckinsey to create a MECE issue tree and action plan for this project risk.
+Use $mckinsey-analysis to create a MECE issue tree and action plan for this project risk.
 ```
 
 ```text
-Use $mckinsey to turn this messy problem into an executive summary.
+Use $mckinsey-analysis to turn this messy problem into an executive summary.
+```
+
+```text
+Use $mckinsey-analysis to create a CEO storyline and dummy pages for this strategy review.
 ```
 
 ```text
@@ -124,12 +131,13 @@ Use $architecture-review to challenge this recommended architecture choice from 
 | `coach` | Interactive Feynman-style explanation and gap diagnosis |
 | `memory` | Active-recall questions, flashcards, and spaced-review plan |
 
-### McKinsey
+### McKinsey Analysis
 
 | Mode | Purpose |
 |---|---|
 | Quick diagnostic | Fast judgment for reviews, decisions, product plans, and document critique |
 | Full consulting | Complete issue definition, MECE decomposition, hypothesis testing, synthesis, action plan, and pressure test |
+| Executive storyline | Storyline, dummy pages, chart/data needs, and slide-title style synthesis |
 
 ### Architecture Review
 
@@ -158,7 +166,7 @@ Validate the skills with the Codex skill creator validator:
 
 ```bash
 python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py article-learning-coach
-python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py mckinsey
+python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py mckinsey-analysis
 python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py architecture-review
 ```
 
