@@ -31,6 +31,20 @@ It is designed to help turn ambiguous problems into decision-ready analysis:
 - synthesize conclusions with pyramid structure
 - produce prioritized action plans and pressure tests
 
+### Architecture Review
+
+`architecture-review` is a general architecture review skill for technical design reviews, ADR critique, runtime flow analysis, data contract review, migration review, failure mode analysis, and adversarial review.
+
+It is designed to make architecture decisions evidence-first and reviewable:
+
+- define review scope, non-goals, constraints, and success criteria
+- map runtime nodes, responsibilities, input/output objects, persistence, and downstream consumers
+- identify existing capabilities and avoid unnecessary rebuilds
+- review contracts for stability, validation, compatibility, and observability
+- distinguish natural language output from system-consumable structured contracts
+- compare current, minimal-change, long-term, and do-nothing options
+- challenge the preferred design with applicability boundaries and failure modes
+
 ## Repository Structure
 
 ```text
@@ -48,6 +62,12 @@ skill-repo/
 │       └── extract_pdf_text.py
 ├── mckinsey/
 │   └── SKILL.md
+├── architecture-review/
+│   ├── SKILL.md
+│   └── references/
+│       ├── failure-modes.md
+│       ├── output-templates.md
+│       └── review-checklist.md
 └── .gitignore
 ```
 
@@ -81,6 +101,18 @@ Use $mckinsey to create a MECE issue tree and action plan for this project risk.
 Use $mckinsey to turn this messy problem into an executive summary.
 ```
 
+```text
+Use $architecture-review to review this technical design and list failure modes.
+```
+
+```text
+Use $architecture-review in contract-review mode to examine these input and output objects.
+```
+
+```text
+Use $architecture-review to challenge this recommended architecture choice from a review-board perspective.
+```
+
 ## Modes
 
 ### Article Learning Coach
@@ -99,6 +131,17 @@ Use $mckinsey to turn this messy problem into an executive summary.
 | Quick diagnostic | Fast judgment for reviews, decisions, product plans, and document critique |
 | Full consulting | Complete issue definition, MECE decomposition, hypothesis testing, synthesis, action plan, and pressure test |
 
+### Architecture Review
+
+| Mode | Purpose |
+|---|---|
+| `proposal-review` | Review design docs, technical proposals, ADRs, and implementation plans |
+| `runtime-flow-review` | Review end-to-end execution flow, states, persistence, and downstream consumers |
+| `contract-review` | Review API, event, task, config, model-output, and data contracts |
+| `incident-architecture-review` | Derive architecture-level root cause from failures and integration logs |
+| `migration-review` | Review compatibility, rollout, rollback, and migration paths |
+| `adversarial-review` | Challenge the preferred design and list boundaries and failure modes |
+
 ## PDF Text Extraction
 
 For local PDFs, the article learning skill includes a small helper script:
@@ -116,6 +159,7 @@ Validate the skills with the Codex skill creator validator:
 ```bash
 python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py article-learning-coach
 python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py mckinsey
+python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py architecture-review
 ```
 
 Check the PDF extraction script syntax:
